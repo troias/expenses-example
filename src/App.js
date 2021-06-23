@@ -5,7 +5,7 @@ import './App.css';
 function App() {
 
   const expenses = [{
-    date: new Date(2021, 2, 28), 
+    date: new Date(2021, 2, 29), 
     description: "expense 1",
     titles: "expense 1",
     amount: "12"
