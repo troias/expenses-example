@@ -6,27 +6,23 @@ function App() {
 
   const expenses = [{
     date: new Date(2021, 2, 28), 
-    description: "testing",
-    titles: "testing",
+    description: "expense 1",
+    titles: "expense 1",
     amount: "12"
   },
   {
   date: new Date(2021, 2, 28), 
-    description: "testing",
-    titles: "testing",
-    amount: "12"
+    description: "expense 2",
+    titles: "expense 2",
+    amount: "13"
   } ]
   const [expense, setExpense] = useState(
     expenses
   )
 
-
-
-
-
   return (
     <div className="App">
-     <h2>Start</h2>
+     <h2>Expenses</h2>
      <ExpenseList expense={expense}/>
     </div>
   );

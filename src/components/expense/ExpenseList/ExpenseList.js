@@ -2,8 +2,8 @@ import React from 'react'
 import ExpenseItem from '../../expense/ExpenseItem/ExpenseItem'
 
 const ExpenseList = (props) => {
-    const {expense } = props
-    console.log( props)
+    const { expense } = props
+    
     return (
         <>
        
