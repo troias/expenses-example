@@ -4,12 +4,21 @@ import './App.css';
 
 function App() {
 
-  const [expense, setExpense] = useState({
+  const expenses = [{
     date: new Date(2021, 2, 28), 
     description: "testing",
     titles: "testing",
     amount: "12"
-  })
+  },
+  {
+  date: new Date(2021, 2, 28), 
+    description: "testing",
+    titles: "testing",
+    amount: "12"
+  } ]
+  const [expense, setExpense] = useState(
+    expenses
+  )
 
 
 

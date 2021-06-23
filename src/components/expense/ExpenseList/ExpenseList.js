@@ -1,11 +1,21 @@
 import React from 'react'
 import ExpenseItem from '../../expense/ExpenseItem/ExpenseItem'
 
- const ExpenseList = (props) => {
+const ExpenseList = (props) => {
+    const {expense } = props
+    console.log( props)
     return (
-        <div>
-            <ExpenseItem expenses={props}/>
-        </div>
+        <>
+       
+        {expense.map(expense => {
+            return (
+                <div>
+                    <ExpenseItem expenses={expense} />
+                </div>
+            )
+        })
+    }
+    </>
     )
 }
 
