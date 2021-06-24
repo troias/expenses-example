@@ -2,6 +2,7 @@ import { useState } from "react"
 import ExpenseList from './components/expense/ExpenseList/ExpenseList';
 import './App.css';
 import Card from './components//Ui/Card'
+import NewExpense from './components/expense/NewExpense/NewExpense'
 
 function App() {
 
@@ -24,16 +25,17 @@ function App() {
     expenses
   )
 
-  const titleHandler = () => {
+  const expenseHandler = (obj) => {
       // console.log(expenses[0].titles)
-      // setExpense({...expenses, titles: 1})
+      setExpense({expenses, ...obj})
   }
 
   return (
     <div className="App">
       <h2>Expenses</h2>
       <Card>
-        <ExpenseList expense={expense} title={titleHandler} />
+        <NewExpense expensehandler={expenseHandler}/>
+        <ExpenseList expense={expense}  />
       </Card>
 
     </div>
