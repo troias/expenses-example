@@ -26,9 +26,15 @@ function App() {
   )
 
   const expenseHandler = (obj) => {
-      // console.log(expenses[0].titles)
-      setExpense({expenses, ...obj})
+      
+      // setExpense([obj, ...expenses])
+      setExpense((prevState) => {
+        return [obj, ...prevState]
+      })
+      console.log(obj)
+    
   }
+  console.log(expenses)
 
   return (
     <div className="App">

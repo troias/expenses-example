@@ -11,12 +11,15 @@ const ExpenseList = (props) => {
     <>
       {expense.map((expense) => {
         return (
-       
+          <li key={expense.id} style={{listStyleType: "none"}}> 
             <Card className={styles.expenses}>
-             
-                <ExpenseItem expenses={expense}  title={props.title}/>
+               
+                <ExpenseItem expenses={expense}  title={props.title} />
+              
              
             </Card>
+            </li>
+               
      
         );
       })}

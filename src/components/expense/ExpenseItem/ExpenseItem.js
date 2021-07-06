@@ -5,7 +5,7 @@ import Card from '../../Ui/Card'
 
 const ExpenseItem = (props) => {
     const { expenses: { date, description, title, amount, id } } = props
-    console.log(props.title)
+    // console.log(props.title)
 
     const titleHandler = (event) => {
         event.preventDefault()
