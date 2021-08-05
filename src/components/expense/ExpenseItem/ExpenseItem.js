@@ -4,12 +4,11 @@ import ExpenseDate from '../ExpenseDate/ExpenseDate'
 import Card from '../../Ui/Card'
 
 const ExpenseItem = (props) => {
-    const { expenses: { date, description, title, amount, id } } = props
-    // console.log(props.title)
+    const { expenses: { date, description, titles: title, amount, id } } = props
+  
 
-    const titleHandler = (event) => {
-        event.preventDefault()
-        props.title()
+    const titleHandler = (id) => {
+        props.title(id)
     }
 
     return (
@@ -22,7 +21,7 @@ const ExpenseItem = (props) => {
             <div className={styles.expenseItem__price}>
                 Amount: {amount}
             </div>
-            <button onClick={titleHandler}>Change Title</button>
+            <button onClick={() => titleHandler(id)}>Change Title</button>
         </Card>
     )
 }
