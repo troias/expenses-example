@@ -13,7 +13,7 @@ const ExpenseForm = (props) => {
     const obj = {
       title: title,
       amount: +number,
-      date: new Date(date),
+      // date: new Date(date),
       id: Math.random(),
       description: description,
     }

@@ -1,42 +1,51 @@
-import React from "react"
+import React, { useState } from "react"
 import styles from "./ExpenseItem.module.css"
 import ExpenseDate from "../ExpenseDate/ExpenseDate"
 import Card from "../../Ui/Card"
 
-const ExpenseItem = (props) => {
-  const {
-    expenses: { date, description, title, amount, id },
-  } = props
+const ExpenseItem = ({
+  expenses: { id, title, description, amount, date },
+  titleHandler,
+  deleteHandler,
+}) => {
+  const [showDescription, setShowDescription] = useState(false)
 
-  const titleHandler = (id) => {
-    props.title(id)
+  const toggleDescriptionHandler = () => {
+    setShowDescription((prevState) => !prevState)
   }
 
-  const deleteHandler = (id) => {
-    props.delete(id)
-  }
+  console.log("expense date", titleHandler)
 
   return (
-    <Card className={styles.expenseItem}>
-      <ExpenseDate date={date} />
-      <div className={styles.expenseItem__description} key={id}>
-        {description}
+    <Card className={styles.expenseItem_card}>
+      <div className={styles.expenseItem__container}>
+        <ExpenseDate date={date} />
+        <div className={styles.expenseItem__title}>
+          <h2>{title}</h2>
+          <button
+            className={styles.expenseItem__Button}
+            onClick={() => titleHandler(id)}
+          >
+            Change Title to Pizza
+          </button>
+          <button
+            className={styles.expenseItem__Button}
+            onClick={() => deleteHandler(id)}
+          >
+            Delete
+          </button>
+        </div>
+        <p className={styles.expenseItem__price}>Amount: ${amount}</p>
       </div>
-      <h2> {title}</h2>
-      <div className={styles.expenseItem__price}>
-        Amount: ${amount}
+
+      <div className={styles.expenseItem__description}>
         <button
-          className={styles.expenseItem__Button}
-          onClick={() => titleHandler(id)}
+          className={styles.expenseItem__descriptionButton}
+          onClick={toggleDescriptionHandler}
         >
-          Change Title
+          {showDescription ? "Hide Description" : "Show Description"}
         </button>
-        <button
-          className={styles.expenseItem__Button}
-          onClick={() => deleteHandler(id)}
-        >
-          Delete
-        </button>
+        {showDescription && <p>{description}</p>}
       </div>
     </Card>
   )

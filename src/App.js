@@ -28,7 +28,6 @@ function App() {
     setExpense((prevState) => {
       return [obj, ...prevState]
     })
-    console.log("expenseHandler", expenseHandler)
   }
 
   const deleteHandler = (id) => {
@@ -49,11 +48,9 @@ function App() {
     })
   }
 
-  console.log("expense", expense)
-
   return (
     <div className="App">
-      <h2>Expenses</h2>
+      <h2>Expenses to Pizza</h2>
       <Card>
         <NewExpense expensehandler={expenseHandler} />
         <ExpenseList

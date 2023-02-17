@@ -6,6 +6,8 @@ import Card from "../../Ui/Card"
 const ExpenseList = (props) => {
   const { expense } = props
 
+  console.log("expense item", expense)
+
   return (
     <>
       {expense.map((expenseItem) => {
@@ -13,8 +15,8 @@ const ExpenseList = (props) => {
           <li key={expenseItem.id} style={{ listStyleType: "none" }}>
             <Card className={styles.expenses}>
               <ExpenseItem
-                title={props.title}
-                delete={props.delete}
+                titleHandler={props.title}
+                deleteHandler={props.delete}
                 expenses={expenseItem}
               />
             </Card>
